@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower - Spirit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C2 50%, #DCC5B0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .invitation {
+            width: 350px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: #FFFFFF;
+            padding: 30px 25px 20px 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .corner-horseshoe {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://cdn-icons-png.flaticon.com/128/3507/3507058.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.8;
+        }
+
+        .corner-horseshoe.top-left {
+            top: 10px;
+            left: 10px;
+            transform: rotate(-20deg);
+        }
+
+        .corner-horseshoe.top-right {
+            top: 10px;
+            right: 10px;
+            transform: rotate(20deg);
+        }
+
+        .corner-horseshoe.bottom-left {
+            bottom: 10px;
+            left: 10px;
+            transform: rotate(-160deg);
+        }
+
+        .corner-horseshoe.bottom-right {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(160deg);
+        }
+
+        .main-illustration {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background: url('caballo.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hosts-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .invitation-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2em;
+            background: linear-gradient(135deg, #D4A574, #B8956A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .baby-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            color: #E8B4A0;
+            margin: 15px 0 25px 0;
+            line-height: 1.2;
+        }
+
+        .countdown {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: #B8860B;
+            margin-top: 10px;
+        }
+
+        .event-details {
+            text-align: left;
+            padding: 0 25px;
+            margin-bottom: 25px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #8B4513;
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .venue-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8em;
+            color: #D4A574;
+            text-align: center;
+            margin: 20px 0 10px 0;
+        }
+
+        /* Botón ubicación */
+        .map-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 25px auto;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #D4A574, #B8956A);
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .map-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #B8956A, #8B5E3C);
+        }
+
+        .bottom-decoration {
+            padding: 20px;
+            text-align: center;
+            background: rgba(212, 165, 116, 0.05);
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .rsvp-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: #8B4513;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .rsvp-details {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1em;
+            color: #999;
+            font-style: italic;
+        }
+
+        .invitation:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 480px) {
+            .invitation {
+                width: 100%;
+                max-width: 380px;
+                margin: 0 10px;
+            }
+
+            .main-title {
+                font-size: 2.8em;
+            }
+
+            .baby-name {
+                font-size: 2.4em;
+            }
+
+            .main-illustration {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invitation">
+        <div class="header">
+            <div class="corner-decorations">
+                <div class="corner-horseshoe top-left"></div>
+                <div class="corner-horseshoe top-right"></div>
+                <div class="corner-horseshoe bottom-left"></div>
+                <div class="corner-horseshoe bottom-right"></div>
+            </div>
+
+            <div class="hosts-names">Iris & Cesar</div>
+            <div class="invitation-text">Te invitan a celebrar el</div>
+
+            <div class="main-illustration"></div>
+
+            <h1 class="main-title">Baby Shower</h1>
+            <div class="subtitle">En honor a</div>
+            <h2 class="baby-name">Mateo Santiago</h2>
+
+            <!-- Cuenta regresiva -->
+            <div class="countdown" id="countdown"></div>
+        </div>
+
+        <div class="event-details">
+            <div class="detail-item">
+                <span class="detail-label">Fecha:</span>
+                <span class="detail-value" id="event-date">Sábado, 8 de Noviembre de 2025 · 15:00 hrs</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Lugar:</span>
+                <span class="detail-value">Ahuacatlan</span>
+            </div>
+        </div>
+
+        <div class="venue-name">CASA DE LOS PAPAS</div>
+
+        <!-- Botón de ubicación -->
+        <a href="https://www.google.com/maps?q=19.6797735,-99.105176" target="_blank" class="map-button">
+            📍 Ver Ubicación
+        </a>
+
+        <div class="bottom-decoration">
+            <div class="rsvp-text">Confirma tu asistencia</div>
+            <div class="rsvp-details">
+                Favor de confirmar antes del [fecha]<br>
+                [Teléfono] • [Email]
+            </div>
+            <div class="quote">"Como Spirit, nuestro pequeño será libre y valiente"</div>
+        </div>
+    </div>
+
+    <script>
+        // Efecto parallax sutil
+        document.addEventListener('mousemove', (e) => {
+            const invitation = document.querySelector('.invitation');
+            const rect = invitation.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+            const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+            invitation.style.transform = `perspective(1000px) rotateY(${x * 3}deg) rotateX(${y * -3}deg)`;
+        });
+        document.addEventListener('mouseleave', () => {
+            const invitation = document.querySelector('.invitation');
+            invitation.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+        document.addEventListener('touchstart', () => {
+            const invitation = document.querySelector('.invitation');
+            invitation.style.transform = 'scale(0.98)';
+        });
+        document.addEventListener('touchend', () => {
+            const invitation = document.querySelector('.invitation');
+            invitation.style.transform = 'scale(1)';
+        });
+
+        // Cuenta regresiva
+        const eventDate = new Date('2025-11-08T15:00:00');
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = "¡La fiesta ha comenzado!";
+                clearInterval(timer);
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            document.getElementById('countdown').innerHTML =
+                `${days} días, ${hours} h, ${minutes} m, ${seconds} s`;
+        }
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
