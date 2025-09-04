@@ -318,15 +318,36 @@
             transform: rotate(160deg);
         }
 
-        .main-illustration {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            background: url('https://res.cloudinary.com/dl91kein6/image/upload/v1756913759/caballo_yu1lkt.png') no-repeat center center;
-            background-size: contain;
+        .illustration-wrapper {
             position: relative;
-            z-index: 2;
+            width: 100%;
         }
+
+        .main-illustration {
+            display: block;
+            width: 70%;
+            /* más pequeño, ajusta al gusto: 70%, 60%, etc. */
+            height: auto;
+            margin: 0 auto;
+            /* lo centra */
+        }
+
+
+
+        .white-mask {
+            position: absolute;
+            top: 0;
+            /* parte superior */
+            right: 0;
+            /* empieza a la derecha */
+            width: 50%;
+            /* cubre hasta la mitad de la imagen */
+            height: 30px;
+            /* alto del rectángulo (ajústalo según necesites) */
+            background: white;
+        }
+
+
 
         .hosts-names {
             font-family: 'Playfair Display', serif;
@@ -584,7 +605,18 @@
             </div>
             <div class="invitation-text">Te invitamos a</div>
             <div class="invitation-text"> celebrar el</div>
-            <div class="main-illustration"></div>
+            <div class="illustration-wrapper">
+                  <video class="main-illustration" autoplay loop muted playsinline>
+                <source src="https://res.cloudinary.com/dl91kein6/video/upload/v1756950323/chido_zfcngp.mp4"
+                    type="video/mp4">
+            </video>
+                <div class="white-mask"></div>
+            </div>
+
+
+  
+
+
             <h1 class="main-title">Baby Shower</h1>
             <div class="subtitle">DE</div>
             <h2 class="baby-name">Mateo Santiago</h2>
